@@ -1,0 +1,41 @@
+Open Eclispe -> Create Project(name-Process) -> create a package in src (name-Process) -> inside package create a class (name-Process)
+
+
+now copy the code from zap
+
+NOTE if you get configuration error 
+right click in project(i.e - process)
+then Build path -> Add External Archives -> File System -> usr -> lib -> Hadoop -> hadoop-common-2.6.0-cdbn-13-0.jar (asa ky tri name asel)  -> click Ok
+
+do same again till lib and then -> hadoop-mapreduce -> Hadoop-core-cdn.jar -> click ok
+
+now the error will be resolved
+
+
+now download the Process.txt from zap
+place it on the desktop
+
+
+now open terminal and run the following commands
+
+1-> pwd
+2-> ls
+3-> hadoop fs -put Desktop/Process.txt Process.txt
+
+
+Now right click on the class in the Eclispe -> Export -> 
+Java -> JAR.file -> next -> save in curr dir that we got from pwd -> name it as Process.jar -> next next finish
+
+
+
+now in the terminal
+
+-> hadoop jar Process.jar Process.Process Process.txt dir16
+-> Hadoop fs -cat dir16/part-r-00000
+
+
+
+DONE!
+
+
+
