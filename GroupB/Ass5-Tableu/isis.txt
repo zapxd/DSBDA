@@ -1,0 +1,71 @@
+->Relationship between Petal Length and Petal Width
+
+Graph- Scatter Plot
+colums - Petal Length
+rows - Petal Width
+Color - Species
+Details - Id
+shape - circle
+
+->Comparision between All Species
+
+colums - Species
+rows - Petal Length Petal Width Sepal Length Sepal Width 
+Color - Species
+
+->Species Count
+
+colums - Species
+rows - Iris Count 
+Color - Species
+
+->Comparison between Species based on Sepal Length and Width
+
+colums - Sepal Length
+rows - Sepal width
+Color - Species
+details - ID
+
+->
+
+colums - Petal LEngth , petal width
+rows - Sepal length and width
+Color - Species
+details - ID
+
+
+3️⃣ Box Plot (Sepal Length by Species)
+Name of the Graph: Box Plot (Sepal Length by Species)
+Name of the Sheet: Box Plot Sepal Length by Species
+Columns: Species
+Rows: SepalLengthCm
+Color: Species
+Description: This box plot shows the distribution of Sepal Length across different species, with the central line showing the median and the box representing the interquartile range.
+
+
+
+4️⃣ Line Chart (Sepal Length vs Petal Length)
+Name of the Graph: Line Chart (Sepal Length vs Petal Length)
+Name of the Sheet: Line Chart Sepal Length vs Petal Length
+Columns: SepalLengthCm
+Rows: PetalLengthCm
+Color: Species
+Mark: Line
+Description: This line chart shows the trend of Petal Length as a function of Sepal Length, with different lines representing each Species.
+
+
+
+Tree MAp
+
+size - petal length
+color - petal width
+label species
+
+
+
+
+
+
+
+
+
