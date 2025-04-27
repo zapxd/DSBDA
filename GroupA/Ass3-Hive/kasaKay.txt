@@ -1,0 +1,72 @@
+open terminal
+
+-> hive
+-> create database folder2;    (this is db name)
+-> use folder2
+-> create table flight(fno int , source varchar(10) , year int ,delay float);
+
+-> alter table flight raname to air_flight;
+-> alter table air_flight add columns(dest varchar(10));
+
+-> drop table flight
+-> create table flight(fno int , source varchar(10) , year int, delay float)  <Enter>
+    row format delimited     <Enter>
+    fields terminated by ','    <Enter>
+    lines terminated by '\n'    <Enter>
+    stored as textfile;
+
+
+-> insert into flight values(215,"pune" , 2023 , 15.00);
+-> insert into flight values(216,"kolkata" , 2024 , 10.00);
+
+-> select * from flight;
+
+
+Now open a new terminal
+
+-> gedit ipp.txt 
+
+inside that text file :
+215,pune,2023,20.00
+216,mumbai,2025,10.00
+217,kolkata,2024,15.00
+218,shegaon,2023,20.00
+219,akurdi,2024,10.00
+
+
+
+Now open the first terminal
+
+-> load data local inpath "ipp.txt"  <Enter>
+    >overwrite into table flight;
+
+
+-> select * from flight;
+
+-> create table nflight(fno int , dest varchar(10) , year int ,delay float) <Enter>
+    row format delimited     <Enter>
+    fields terminated by ','    <Enter>
+    lines terminated by '\n'    <Enter>
+    stored as textfile;
+
+-> select * from nflight;
+
+-> insert into nflight values(215,"nagpur", 2023);
+
+
+-> select a.fno,a.source,a.year,a.delay,b.dest  <Enter>
+    >from flight a join nflight b  <Enter>
+    >on(a.fno=b.fno);
+
+
+-> create index idx_delay on flight(delay) <Enter>
+    > as 'COMPACT' <Enter>
+    > with deferred rebuild;
+
+-> alter index idx_delay on flight rebuild;
+
+
+-> select year, avg(delay) as avg_delay <Enter>
+    > from flight <Enter>
+    > group by year <Enter>
+    > order by year;
